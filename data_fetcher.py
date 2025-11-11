@@ -2,7 +2,9 @@ import pandas as pd
 from binance.client import Client
 from config import BINANCE_API_KEY, BINANCE_SECRET_KEY
 
-client = Client(BINANCE_API_KEY, BINANCE_SECRET_KEY)
+from config import BINANCE_API_KEY, BINANCE_SECRET_KEY, USE_TESTNET
+
+client = Client(BINANCE_API_KEY, BINANCE_SECRET_KEY, testnet=USE_TESTNET)
 
 def get_klines(symbol="BTCUSDT", interval="1m", limit=500):
     """
