@@ -2,7 +2,7 @@ API_KEY = "YOUR_BINANCE_API_KEY"
 API_SECRET = "YOUR_BINANCE_SECRET_KEY"
 
 # Trading Settings
-USE_TESTNET = False  # True if you want testnet, False for real futures
+USE_TESTNET = True  # True if you want testnet, False for real futures
 TRADE_SYMBOLS = ["BTCUSDT", "ETHUSDT"]  # Bot will scan many later
 TIMEFRAME = "5m"
 
