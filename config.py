@@ -1,5 +1,5 @@
-API_KEY = ALhw7cZCA8pvIxoL2LrVagTUt5ywdAhlRAzyUTUgSTQpkvn8EadF1nTpnGrP9FVh
-API_SECRET = v1H5juNl1fGiw3PevoQzCu712c0b3nGKCRq7bzdJzRbWkjXAvjYFapOCcQY1GdsU
+API_KEY = "ALhw7cZCA8pvIxoL2LrVagTUt5ywdAhlRAzyUTUgSTQpkvn8EadF1nTpnGrP9FVh"
+API_SECRET = "v1H5juNl1fGiw3PevoQzCu712c0b3nGKCRq7bzdJzRbWkjXAvjYFapOCcQY1GdsU"
 
 # Trading Settings
 USE_TESTNET = True  # True if you want testnet, False for real futures
