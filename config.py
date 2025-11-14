@@ -1,5 +1,5 @@
-BINANCE_API_KEY = "ALhw7cZCA8pvIxol2LrVagTUt5ywdAh1RAzyUTUgSTQpkvn8EadF1nTpnGrP9FVh"
-BINANCE_SECRET_KEY = "v1H5juN1lfGiw3PevoQzCu712c0b3nGKCRq7bzdJzRbWkjXAvjYFap0CcQY1GdsU"
+API_KEY = "ALhw7cZCA8pvIxol2LrVagTUt5ywdAh1RAzyUTUgSTQpkvn8EadF1nTpnGrP9FVh"
+API_SECRET = "v1H5juN1lfGiw3PevoQzCu712c0b3nGKCRq7bzdJzRbWkjXAvjYFap0CcQY1GdsU"
 
 # Trading Settings
 USE_TESTNET = True  # True if you want testnet, False for real futures
