@@ -1,38 +1,30 @@
 import pandas as pd
 from binance.client import Client
-from config import BINANCE_API_KEY, BINANCE_SECRET_KEY
+from config import API_KEY, API_SECRET, USE_TESTNET
 
-from config import BINANCE_API_KEY, BINANCE_SECRET_KEY, USE_TESTNET
+# ✅ Connect to Binance (Testnet or Real)
+if USE_TESTNET:
+    client = Client(API_KEY, API_SECRET, testnet=True)
+    print("✅ Connected to Binance TESTNET")
+else:
+    client = Client(API_KEY, API_SECRET)
+    print("✅ Connected to Binance REAL account")
 
-client = Client(BINANCE_API_KEY, BINANCE_SECRET_KEY, testnet=USE_TESTNET)
-
-def get_klines(symbol="BTCUSDT", interval="1m", limit=500):
-    """
-    Fetch OHLCV from Binance Futures
-    """
+# ✅ Function to get candle data
+def get_klines(symbol, interval, limit):
     try:
-        data = client.futures_klines(symbol=symbol, interval=interval, limit=limit)
-
-        df = pd.DataFrame(data, columns=[
-            "open_time","open","high","low","close","volume",
-            "close_time","qav","trades","taker_base","taker_quote","ignore"
+        klines = client.get_klines(symbol=symbol, interval=interval, limit=limit)
+        df = pd.DataFrame(klines, columns=[
+            'open_time', 'open', 'high', 'low', 'close', 'volume',
+            'close_time', 'quote_asset_volume', 'trades', 'taker_base_vol',
+            'taker_quote_vol', 'ignore'
         ])
-
-        df["open"] = df["open"].astype(float)
-        df["high"] = df["high"].astype(float)
-        df["low"] = df["low"].astype(float)
-        df["close"] = df["close"].astype(float)
-        df["volume"] = df["volume"].astype(float)
-        df["open_time"] = pd.to_datetime(df["open_time"], unit="ms")
-
+        df['open'] = df['open'].astype(float)
+        df['high'] = df['high'].astype(float)
+        df['low'] = df['low'].astype(float)
+        df['close'] = df['close'].astype(float)
+        df['volume'] = df['volume'].astype(float)
         return df
-
     except Exception as e:
-        print("Error fetching data:", e)
+        print(f"Error fetching data: {e}")
         return None
-
-
-# Test run (remove when integrating bot)
-if __name__ == "__main__":
-    df = get_klines()
-    print(df.tail())
