@@ -1,8 +1,8 @@
-python-binance
-websockets
-pandas
-numpy
-ta
-requests
-ccxt
-scipy
+websockets==12.0
+pandas==2.1.4
+numpy==1.26.4
+ta==0.10.2
+requests==2.31.0
+ccxt==4.1.13
+scipy==1.11.4
+python-dotenv==1.0.1
