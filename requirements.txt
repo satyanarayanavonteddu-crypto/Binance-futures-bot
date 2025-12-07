@@ -1,7 +1,8 @@
-pandas==1.5.3
-numpy==1.23.5
-websockets==10.4
-ta==0.10.2
-requests==2.31.0
-ccxt==4.1.74
-scipy==1.10.1
+python-binance
+pandas
+numpy
+requests
+websocket-client
+python-dateutil
+urllib3
+h11
