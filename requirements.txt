@@ -1,8 +1,3 @@
-python-binance
 pandas
+ccxt
 numpy
-requests
-websocket-client
-python-dateutil
-urllib3
-h11
